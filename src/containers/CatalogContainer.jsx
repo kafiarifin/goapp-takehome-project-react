@@ -8,8 +8,8 @@ export const CatalogContainer = () => {
     return (
         <VStack spacing={8}>
             <Grid
-                h="200px"
-                templateRows="repeat(2, 1fr)"
+                h="100%"
+                templateRows="repeat(1, 1fr)"
                 templateColumns="repeat(5, 1fr)"
                 gap={2}
             >
@@ -19,7 +19,7 @@ export const CatalogContainer = () => {
                     </Box>
                 </GridItem>
                 <GridItem colSpan={4}>
-                    <Wrap>
+                    <Wrap h="100%">
                         <ProductList />
                     </Wrap>
                 </GridItem>

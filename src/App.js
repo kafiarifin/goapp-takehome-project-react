@@ -20,7 +20,7 @@ export const App = () => (
   <ChakraProvider theme={customTheme}>
     <Navbar />
     <Box fontSize="xl">
-      <Grid minH="80vh" p={3}>
+      <Grid p={3}>
         <Switch>
           <Route exact path="/" component={HomeContainer} />
           <Route exact path="/catalog" component={CatalogContainer} />
