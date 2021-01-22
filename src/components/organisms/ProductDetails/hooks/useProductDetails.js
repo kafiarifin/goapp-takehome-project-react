@@ -1,0 +1,21 @@
+import { useEffect, useState } from "react";
+import t from 'typy';
+import { useDispatch, useSelector } from "react-redux";
+import { fetchingSelector, productDataSelector } from "../../../../redux/Product/selectors";
+import { product } from '../../../../redux/Product/actions';
+
+export default function useProductDetails(props) {
+
+    const dispatch = useDispatch()
+    const productData = useSelector(productDataSelector)
+    const fetchProduct = useSelector(fetchingSelector)
+
+    useEffect(() => {
+        dispatch(product.requestOne(45132716338248))
+    }, [dispatch])
+
+    return {
+        fetchProduct,
+        productData,
+    };
+}
