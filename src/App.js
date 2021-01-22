@@ -1,42 +1,34 @@
 import React from 'react';
+import { Route, Switch } from 'react-router-dom';
 import {
   ChakraProvider,
   Box,
-  Text,
-  Link,
-  VStack,
-  Code,
   Grid,
-  theme,
 } from '@chakra-ui/react';
-import { ColorModeSwitcher } from './ColorModeSwitcher';
-import { Logo } from './Logo';
 
-function App() {
-  return (
-    <ChakraProvider theme={theme}>
-      <Box textAlign="center" fontSize="xl">
-        <Grid minH="100vh" p={3}>
-          <ColorModeSwitcher justifySelf="flex-end" />
-          <VStack spacing={8}>
-            <Logo h="40vmin" pointerEvents="none" />
-            <Text>
-              Edit <Code fontSize="xl">src/App.js</Code> and save to reload.
-            </Text>
-            <Link
-              color="teal.500"
-              href="https://chakra-ui.com"
-              fontSize="2xl"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learn Chakra
-            </Link>
-          </VStack>
-        </Grid>
-      </Box>
-    </ChakraProvider>
-  );
-}
+import customTheme from "./styles/theme";
+import Navbar from './components/molecules/Navbar/Navbar';
+import { WithErrors } from './hocs/WithErrors';
+import { HomeContainer } from './containers/HomeContainer';
+import { LoginContainer } from './containers/LoginContainer';
+import { CatalogContainer } from './containers/CatalogContainer';
+import { ProductDetailContainer } from './containers/ProductDetailContainer';
 
-export default App;
+export const App = () => (
+
+  <ChakraProvider theme={customTheme}>
+    <Navbar />
+    <Box fontSize="xl">
+      <Grid minH="80vh" p={3}>
+        <Switch>
+          <Route exact path="/" component={HomeContainer} />
+          <Route exact path="/catalog" component={CatalogContainer} />
+          <Route exact={false} path="/product/:id" component={ProductDetailContainer} />
+          <Route exact path="/login" component={LoginContainer} />
+        </Switch>
+      </Grid>
+    </Box>
+  </ChakraProvider>
+)
+
+export default WithErrors(App)
