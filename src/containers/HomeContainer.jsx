@@ -24,18 +24,14 @@ export const HomeContainer = () => {
 
             <ProductTrend />
 
-            <Logo h="40vmin" pointerEvents="none" />
-            <Text>
-                Edit <Code fontSize="xl">src/HomeContainer.js</Code> and save to reload.
-            </Text>
             <Link
                 color="primary.800"
-                href="https://chakra-ui.com"
+                href="http://goapp.co.id/"
                 fontSize="2xl"
                 target="_blank"
                 rel="noopener noreferrer"
             >
-                Learn Chakra
+                by GoApp
             </Link>
         </VStack>
     );
