@@ -1,4 +1,5 @@
-import { Box, Image, Badge, Link, Skeleton, Text } from '@chakra-ui/react';
+import { Box, Image, Badge, Text, Link } from '@chakra-ui/react';
+// import { Link } from 'react-router-dom';
 import t from 'typy';
 import NumberFormat from 'react-number-format';
 
@@ -17,7 +18,7 @@ const ProductCard = ({ props, data }) => {
     const productPrice = t(data, 'original_price.price').safeObject;
 
     return (
-        <Link href={"/product/" + productKey} style={{ textDecoration: "none" }}>
+        <Link href={"/product/" + productUid + "/" + productKey} style={{ textDecoration: "none" }}>
             <Box w="100%" h="100%" borderWidth="1px" borderRadius="xl" overflow="hidden" shadow="xl">
                 <Image
                     w="100%"

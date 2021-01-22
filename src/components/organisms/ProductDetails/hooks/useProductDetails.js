@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import t from 'typy';
 import { useDispatch, useSelector } from "react-redux";
 import { fetchingSelector, productDataSelector } from "../../../../redux/Product/selectors";
@@ -10,8 +11,10 @@ export default function useProductDetails(props) {
     const productData = useSelector(productDataSelector)
     const fetchProduct = useSelector(fetchingSelector)
 
+    let { id } = useParams();
+    console.log(id, 'use id');
     useEffect(() => {
-        dispatch(product.requestOne(45132716338248))
+        dispatch(product.requestOne(id))
     }, [dispatch])
 
     return {
