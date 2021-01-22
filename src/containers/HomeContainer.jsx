@@ -23,16 +23,6 @@ export const HomeContainer = () => {
             />
 
             <ProductTrend />
-
-            <Link
-                color="primary.800"
-                href="http://goapp.co.id/"
-                fontSize="2xl"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                by GoApp
-            </Link>
         </VStack>
     );
 }

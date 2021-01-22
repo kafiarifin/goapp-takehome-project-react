@@ -13,6 +13,7 @@ import { HomeContainer } from './containers/HomeContainer';
 import { LoginContainer } from './containers/LoginContainer';
 import { CatalogContainer } from './containers/CatalogContainer';
 import { ProductDetailContainer } from './containers/ProductDetailContainer';
+import Footer from './components/molecules/Footer/Footer';
 
 export const App = () => (
 
@@ -28,6 +29,7 @@ export const App = () => (
         </Switch>
       </Grid>
     </Box>
+    <Footer />
   </ChakraProvider>
 )
 
